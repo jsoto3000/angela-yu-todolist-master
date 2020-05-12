@@ -2,7 +2,7 @@
 
 const express = require('./node_modules/express');
 const bodyParser = require("./node_modules/body-parser");
-const getDate = require(__dirname + "/date.js")
+const date = require(__dirname + "/date.js")
 
 const app = express();
 
@@ -42,6 +42,9 @@ const deleteBtn = () => {
 };
 
 app.get("/", function (req, res) {
+
+    let day = date.getDate()
+
     res.render("lists", {
         kindOfDay: day,
         listsType: 'Home List',
@@ -68,6 +71,9 @@ app.post("/", function (req, res) {
 });
 
 app.get('/work', function(req, res) {
+
+    let day = date.getDate()
+
     res.render('lists', {
         kindOfDay: day,
         listsType: "Work List",
