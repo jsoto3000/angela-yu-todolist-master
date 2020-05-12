@@ -85,11 +85,14 @@ app.get('/work', function(req, res) {
 app.post('/profile', function(req, res) {
     res.send("Success");
 
-    // let item = req.body.newItem;
-    // workItems.push(homeItems);
-    // res.redirect('/work');
+    let item = req.body.newItem;
+    workItems.push(homeItems);
+    res.redirect('/work');
 });
 
+app.get('/about', function(req, res) {
+  res.render('about');
+})
 
 
 app.listen(3001, function () {
