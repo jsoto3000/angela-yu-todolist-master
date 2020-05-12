@@ -43,7 +43,7 @@ const deleteBtn = () => {
 
 app.get("/", function (req, res) {
 
-    let day = date.getDate()
+    let day = date()
 
     res.render("lists", {
         kindOfDay: day,
@@ -72,7 +72,7 @@ app.post("/", function (req, res) {
 
 app.get('/work', function(req, res) {
 
-    let day = date.getDate()
+    let day = date()
 
     res.render('lists', {
         kindOfDay: day,
