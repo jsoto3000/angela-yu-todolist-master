@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/styles.css" rel="stylesheet">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="box"  id="heading">
+        <h1> <%= kindOfDay %> </h1> 
+        <h2><%= listsType %>  </h2> 
+        <!-- <h2> Hey <%= userName %> , Check some things off your list today  !!</h2> -->
+
+    </div>
+    
+    <div class="box" >
+        <h1 id="heading">To Do List</h1>
+        <% for (var i = 0; i < newListItems.length; i++) {  %>
+        <div class="item">
+            <input type="checkbox">
+            <p class="listItem"> <%= newListItems[i] %> </p>           
+        </div>  
+        <% } %> 
+            <form class="item" action="/" method="post" autocomplete="off">
+                <input type="text" name="newItem" placeholder="Add New Item" autofocus autocomplete="off">
+        
+                <button type="submit" class="btn" name="list" value="<%= listsType %>">+</button>
+                <button type="button" class="btn clear" name="list" value="<%= listsType %>">x</button>
+        
+                <!-- maybe - add some logic to see if the new item to be added is already in the list -->
+            </form>
+          
+        </div>
+
+</body>
+</html>
